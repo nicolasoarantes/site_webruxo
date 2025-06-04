@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos 3D - Webruxo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .model-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #0B0B2D, #2D0B38);
+        }
+        
+        .model-section {
+            padding: 40px 0;
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .model-info {
+            padding: 20px;
+        }
+        
+        .model-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .model-info p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .model-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .model-buttons a {
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .model-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo">Webruxo</div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="new_game/jogo_improved.html">Jogo Eggonaldo</a></li>
+                <li><a href="modelos-3d.html">Modelos 3D</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Header da Página -->
+        <section id="page-header" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem;">
+            <h1>Nossos Modelos 3D Interativos</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto 0;">Explore nossos modelos 3D interativos e descubra como podemos trazer magia digital para sua marca com experiências imersivas.</p>
+        </section>
+
+        <!-- Seção Eggonaldo -->
+        <section class="model-section">
+            <div class="container">
+                <h2>Eggonaldo - Nosso Mascote Mágico</h2>
+                <div class="model-grid">
+                    <div class="model-container" id="eggonaldo-viewer"></div>
+                    <div class="model-info">
+                        <h3>Eggonaldo, o Bruxo dos Ovos</h3>
+                        <p>Nosso mascote oficial, Eggonaldo, é um bruxo especialista em magia digital. Com seu chapéu roxo e personalidade carismática, ele guia nossos clientes pela jornada de transformação digital.</p>
+                        <p>Este modelo 3D foi criado com técnicas avançadas de modelagem e texturização, demonstrando nossa capacidade de criar personagens únicos e memoráveis para sua marca.</p>
+                        <div class="model-buttons">
+                            <a href="new_game/jogo_improved.html">Jogar com Eggonaldo</a>
+                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20modelagem%203D" target="_blank">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Monster -->
+        <section class="model-section" style="background-color: #f9f9f9;">
+            <div class="container">
+                <h2>Monster - Experiência Interativa</h2>
+                <div class="model-grid">
+                    <div class="model-info">
+                        <h3>Monster Interativo</h3>
+                        <p>Este é um exemplo de nossa capacidade de criar experiências 3D interativas usando tecnologias avançadas como Spline. Interaja com o modelo usando seu mouse ou toque para uma experiência imersiva.</p>
+                        <p>Podemos criar modelos semelhantes para sua marca, produtos ou serviços, proporcionando uma experiência única e memorável para seus clientes.</p>
+                        <div class="model-buttons">
+                            <a href="https://prod.spline.design/rpouiftbxrJqNDoc/scene.splinecode" target="_blank">Ver em Tela Cheia</a>
+                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20experiência%203D%20interativa" target="_blank">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                    <div class="model-container" id="monster-viewer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Serviços 3D -->
+        <section class="model-section">
+            <div class="container">
+                <h2>Nossos Serviços de Modelagem 3D</h2>
+                <div class="services-grid" style="margin-top: 30px;">
+                    <div class="service-card">
+                        <h3>Modelagem de Personagens</h3>
+                        <p>Criamos personagens 3D únicos para sua marca, jogos, animações ou experiências interativas.</p>
+                        <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Experiências Interativas</h3>
+                        <p>Desenvolvemos experiências 3D interativas para web, permitindo que seus clientes interajam com seus produtos de forma imersiva.</p>
+                        <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Visualização de Produtos</h3>
+                        <p>Transformamos seus produtos em modelos 3D interativos para e-commerce, catálogos digitais e apresentações.</p>
+                        <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Logos e Identidade Visual 3D</h3>
+                        <p>Elevamos sua identidade visual com versões 3D de logos e elementos de marca para uso em diversos contextos.</p>
+                        <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção CTA -->
+        <section id="cta" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem;">
+            <h2>Pronto para adicionar magia 3D ao seu projeto?</h2>
+            <p>Entre em contato conosco hoje mesmo e descubra como podemos transformar suas ideias em experiências digitais encantadas.</p>
+            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20projeto%203D" target="_blank" style="display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: white; color: var(--primary); border-radius: 5px; text-decoration: none; font-weight: 600;">Solicitar Orçamento</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Mapa do Site</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="cases.html">Cases</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="new_game/jogo_improved.html">Jogo Eggonaldo</a></li>
+                    <li><a href="modelos-3d.html">Modelos 3D</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato Rápido</h4>
+                <p>Email: contato@webruxo.com</p>
+                <p>WhatsApp: <a href="https://wa.me/5527996218871" target="_blank">+55 27 99621-8871</a></p>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-facebook fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="footer-mascot">
+                <img src="images/eggonaldo_mascote.png" alt="Eggonaldo" style="max-width: 100px;">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Criado com magia, estratégia e carinho por Webruxo.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { createEggonaldoViewer, createSplineViewer } from './js/3d-viewer.js';
+        
+        // Inicializar visualizador do Eggonaldo
+        const eggonaldoViewer = createEggonaldoViewer('eggonaldo-viewer');
+        
+        // Inicializar visualizador do Monster via Spline
+        const monsterViewer = createSplineViewer('monster-viewer', 'https://prod.spline.design/rpouiftbxrJqNDoc/scene.splinecode');
+        
+        // Adicionar evento para limpar visualizadores ao sair da página
+        window.addEventListener('beforeunload', () => {
+            if (eggonaldoViewer) eggonaldoViewer.dispose();
+            if (monsterViewer) monsterViewer.dispose();
+        });
+    </script>
+</body>
+</html>

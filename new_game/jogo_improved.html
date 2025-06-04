@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webruxo Wander - O Jogo</title>
+    <link rel="stylesheet" href="css/game_style.css">
+    <!-- Import Three.js (using CDN for simplicity, can be downloaded later) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.163.0/build/three.module.js"
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #0B0B2D;
+            color: #FFFFFF;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Estilo Retro Moderno para Telas de Instruções */
+        #instruction-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+            color: #FFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 100;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+            overflow: auto;
+        }
+
+        #instruction-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .instruction-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instruction-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #FF00FF, #00FFFF);
+            animation: rainbow-border 3s linear infinite;
+        }
+
+        @keyframes rainbow-border {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        #instruction-screen h2 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        #instruction-screen h3 {
+            color: #FF00FF;
+            margin: 20px 0 10px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #instruction-screen p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        #instruction-screen ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        #instruction-screen li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        #instruction-screen li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #00FFFF;
+            font-weight: bold;
+        }
+
+        #instruction-screen li strong {
+            color: #00FFFF;
+            font-weight: bold;
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .game-button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            background-color: #6A1B9A;
+            color: white;
+            border: 2px solid #00FFFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-button:hover {
+            background-color: #8E44AD;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .game-button:active {
+            transform: translateY(1px);
+        }
+
+        .game-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+            transition: transform 0.3s ease;
+        }
+
+        .game-button:hover::after {
+            transform: rotate(30deg) translate(10%, 10%);
+        }
+
+        #loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+            color: #00FFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            z-index: 200;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+
+        #game-container {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Controles Mobile */
+        #mobile-controls {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: none;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 50;
+        }
+
+        #mobile-controls button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(106, 27, 154, 0.7);
+            border: 2px solid #00FFFF;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        #mobile-controls button:active {
+            background-color: rgba(255, 0, 255, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* Menu de Configuração */
+        #config-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+            color: #FFF;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .config-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .key-config {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .key-config:last-child {
+            border-bottom: none;
+        }
+
+        .key-label {
+            color: #00FFFF;
+            font-weight: bold;
+        }
+
+        .key-button {
+            background-color: #6A1B9A;
+            color: white;
+            border: 1px solid #00FFFF;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .key-button:hover {
+            background-color: #8E44AD;
+        }
+
+        .key-button.listening {
+            background-color: #FF00FF;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 255, 0); }
+        }
+
+        /* Botão de Pausa/Menu */
+        #pause-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(106, 27, 154, 0.7);
+            border: 2px solid #00FFFF;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 50;
+            font-size: 20px;
+        }
+
+        #pause-button:hover {
+            background-color: rgba(255, 0, 255, 0.9);
+        }
+
+        /* Menu de Pausa */
+        #pause-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 11, 45, 0.8);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 150;
+        }
+
+        .pause-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00FFFF;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Botão de Voltar ao Site */
+        #back-to-site-button {
+            background: linear-gradient(135deg, #FF00FF 0%, #9C27B0 100%);
+            color: white;
+            border: 2px solid #00FFFF;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(106, 27, 154, 0.3);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 50;
+            display: none;
+        }
+        
+        #back-to-site-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(106, 27, 154, 0.4);
+            background: linear-gradient(135deg, #9C27B0 0%, #FF00FF 100%);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #instruction-screen h2 {
+                font-size: 1.5em;
+            }
+
+            #instruction-screen h3 {
+                font-size: 1.1em;
+            }
+
+            #instruction-screen p, #instruction-screen li {
+                font-size: 0.9em;
+            }
+
+            .game-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .instruction-container {
+                padding: 20px;
+            }
+            
+            #back-to-site-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">Carregando Feitiços Digitais...</div>
+
+    <div id="instruction-screen">
+        <div class="instruction-container">
+            <h2>Bem-vindo ao Webruxo Wander!</h2>
+            <p>Ajude Eggonaldo a navegar por este mundo mágico usando seus feitiços de plataforma!</p>
+            
+            <h3>Controles no Desktop</h3>
+            <ul>
+                <li><strong>Mover:</strong> WASD ou Setas Direcionais</li>
+                <li><strong>Pular:</strong> Barra de Espaço</li>
+                <li><strong>Gancho Mágico:</strong> Shift (Esquerdo), F, ou Clique do Mouse</li>
+                <li><strong>Menu/Pausa:</strong> ESC ou P</li>
+                <li><strong>Reiniciar:</strong> R (quando perder)</li>
+            </ul>
+            
+            <h3>Controles Mobile</h3>
+            <ul>
+                <li><strong>Mover:</strong> Arraste o dedo na tela</li>
+                <li><strong>Pular:</strong> Botão de Pulo (Inferior Esquerdo)</li>
+                <li><strong>Gancho Mágico:</strong> Botão de Gancho (Inferior Direito)</li>
+                <li><strong>Menu/Pausa:</strong> Botão no canto superior direito</li>
+            </ul>
+            
+            <p>Use o gancho mágico para alcançar plataformas distantes e explore o mundo encantado da Webruxo!</p>
+            
+            <div class="button-container">
+                <button id="start-game-button" class="game-button">Iniciar Aventura!</button>
+                <button id="config-button" class="game-button">Configurar Teclas</button>
+                <button id="back-to-site-menu-button" class="game-button">Voltar ao Site</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="config-screen">
+        <div class="config-container">
+            <h2>Configuração de Teclas</h2>
+            
+            <div class="key-config">
+                <span class="key-label">Mover para Frente:</span>
+                <button class="key-button" data-action="forward">W</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Mover para Trás:</span>
+                <button class="key-button" data-action="backward">S</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Mover para Esquerda:</span>
+                <button class="key-button" data-action="left">A</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Mover para Direita:</span>
+                <button class="key-button" data-action="right">D</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Pular:</span>
+                <button class="key-button" data-action="jump">Espaço</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Gancho Mágico:</span>
+                <button class="key-button" data-action="hook">Shift</button>
+            </div>
+            
+            <div class="key-config">
+                <span class="key-label">Pausa/Menu:</span>
+                <button class="key-button" data-action="pause">ESC</button>
+            </div>
+            
+            <div class="button-container">
+                <button id="save-config-button" class="game-button">Salvar Configuração</button>
+                <button id="back-button" class="game-button">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pause-menu">
+        <div class="pause-container">
+            <h2>Jogo Pausado</h2>
+            <button id="resume-button" class="game-button">Continuar</button>
+            <button id="controls-button" class="game-button">Configurar Controles</button>
+            <button id="restart-button" class="game-button">Reiniciar</button>
+            <button id="exit-button" class="game-button">Sair do Jogo</button>
+            <button id="back-to-site-pause-button" class="game-button">Voltar ao Site</button>
+        </div>
+    </div>
+
+    <div id="game-container"></div>
+
+    <button id="pause-button" style="display: none;">II</button>
+    <button id="back-to-site-button">Voltar ao Site</button>
+
+    <div id="mobile-controls">
+        <button id="jump-button">PULAR</button>
+        <button id="hook-button">GANCHO</button>
+    </div>
+
+    <script type="module" src="js/game_improved.js"></script>
+</body>
+</html>

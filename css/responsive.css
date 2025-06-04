@@ -1,0 +1,201 @@
+/* Ajustes adicionais de responsividade */
+
+/* Ajustes para dispositivos móveis menores */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .team-member, .service-card {
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    .footer-content > div {
+        flex-basis: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Menu mobile responsivo */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    .logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+/* Melhorias de acessibilidade */
+button:focus, a:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Animações adicionais para interatividade */
+.service-card, .package-card, .team-member, .portfolio-item, .faq-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .package-card:hover, .team-member:hover, .portfolio-item:hover, .faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.15);
+}
+
+/* Efeito de destaque para formulários */
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(106, 27, 154, 0.2);
+}
+
+/* Animação para botões */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(106, 27, 154, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Efeito de carregamento gradual para seções */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .packages-grid {
+        flex-wrap: wrap;
+    }
+    
+    .package-card {
+        flex-basis: 45%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Melhorias para impressão */
+@media print {
+    header, footer, button, .cta, #cta, #cta-services {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    .service-card, .package-card, .team-member, .portfolio-item, .faq-item {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

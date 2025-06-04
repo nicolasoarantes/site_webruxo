@@ -1,0 +1,534 @@
+/* Estilo Retro Moderno para o Jogo Eggonaldo */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #0B0B2D;
+    color: #FFFFFF;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Efeito de scanline para estética retro */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}
+
+.game-header {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 10;
+    border-bottom: 2px solid #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.game-header h1 a {
+    color: #FFD700; /* Amarelo Dourado */
+    text-decoration: none;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+.game-header h2 {
+    color: #FF00FF; /* Rosa Neon */
+    font-size: 1em;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+#game-container {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Controles Mobile */
+#mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 50;
+}
+
+#mobile-controls button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(106, 27, 154, 0.7);
+    border: 2px solid #00FFFF;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: all 0.2s ease;
+}
+
+#mobile-controls button:active {
+    background-color: rgba(255, 0, 255, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+    color: #00FFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 200;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+#loading-screen::after {
+    content: '...';
+    animation: loading-dots 1.5s infinite;
+    width: 1.5em;
+    text-align: left;
+}
+
+@keyframes loading-dots {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
+
+/* Estilo Retro Moderno para Telas de Instruções */
+#instruction-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    overflow: auto;
+}
+
+#instruction-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+.instruction-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.instruction-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #FF00FF, #00FFFF);
+    animation: rainbow-border 3s linear infinite;
+    background-size: 200% 100%;
+}
+
+@keyframes rainbow-border {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+#instruction-screen h2 {
+    color: #FFD700;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+#instruction-screen h3 {
+    color: #FF00FF;
+    margin: 20px 0 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#instruction-screen p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+#instruction-screen ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#instruction-screen li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+#instruction-screen li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+#instruction-screen li strong {
+    color: #00FFFF;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.game-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #6A1B9A;
+    color: white;
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-button:hover {
+    background-color: #8E44AD;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.game-button:active {
+    transform: translateY(1px);
+}
+
+.game-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(30deg);
+    transition: transform 0.3s ease;
+}
+
+.game-button:hover::after {
+    transform: rotate(30deg) translate(10%, 10%);
+}
+
+/* Menu de Configuração */
+#config-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0B0B2D, #2D0B38);
+    color: #FFF;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.config-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.key-config {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.key-config:last-child {
+    border-bottom: none;
+}
+
+.key-label {
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.key-button {
+    background-color: #6A1B9A;
+    color: white;
+    border: 1px solid #00FFFF;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+}
+
+.key-button:hover {
+    background-color: #8E44AD;
+}
+
+.key-button.listening {
+    background-color: #FF00FF;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 0, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 255, 0); }
+}
+
+/* Botão de Pausa/Menu */
+#pause-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(106, 27, 154, 0.7);
+    border: 2px solid #00FFFF;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 50;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+#pause-button:hover {
+    background-color: rgba(255, 0, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Menu de Pausa */
+#pause-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 11, 45, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 150;
+}
+
+.pause-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #instruction-screen h2 {
+        font-size: 1.5em;
+    }
+
+    #instruction-screen h3 {
+        font-size: 1.1em;
+    }
+
+    #instruction-screen p, #instruction-screen li {
+        font-size: 0.9em;
+    }
+
+    .game-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .instruction-container {
+        padding: 20px;
+    }
+    
+    .key-config {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .key-button {
+        width: 100%;
+    }
+}
+
+/* Animações e efeitos visuais */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+}
+
+.glow-effect {
+    animation: glow 2s infinite;
+}
+
+/* Efeito de CRT para telas */
+.crt-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.crt-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.crt-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.27861; }
+    5% { opacity: 0.34769; }
+    10% { opacity: 0.23604; }
+    15% { opacity: 0.90626; }
+    20% { opacity: 0.18128; }
+    25% { opacity: 0.83891; }
+    30% { opacity: 0.65583; }
+    35% { opacity: 0.67807; }
+    40% { opacity: 0.26559; }
+    45% { opacity: 0.84693; }
+    50% { opacity: 0.96019; }
+    55% { opacity: 0.08594; }
+    60% { opacity: 0.20313; }
+    65% { opacity: 0.71988; }
+    70% { opacity: 0.53455; }
+    75% { opacity: 0.37288; }
+    80% { opacity: 0.71428; }
+    85% { opacity: 0.70419; }
+    90% { opacity: 0.7003; }
+    95% { opacity: 0.36108; }
+    100% { opacity: 0.24387; }
+}

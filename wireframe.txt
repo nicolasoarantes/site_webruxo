@@ -1,0 +1,212 @@
+Wireframe
+Esboço descritivo detalhado da Home da Webruxo, com foco especial nos serviços
+
+🧙‍♂️ ESBOÇO DA HOME – WEBRUXO (foco em serviços)
+🧠 Estrutura geral
+
+Visualmente, pensa no site como um scroll fluido com seções bem delimitadas por elementos
+mágicos: brilhos, sombras, teias e runas encantadas discretas no fundo.
+Cada área tem como protagonista um mascote, com destaque para Eggonaldo abrindo a
+jornada.
+
+🧱 SEÇÃO 1: Hero — “A magia começa aqui”
+Layout:
+
+🧙 Eggonaldo do lado esquerdo, em pose de feitiço, lançando runas que formam um mini
+layout flutuante
+À direita, o texto principal e botões
+Conteúdo:
+Headline: Transformamos ideias em experiências digitais encantadas.
+Subheadline: Criação de sites, design estratégico, automações e branding com identidade
+própria.
+Botões:
+[ Comece seu projeto ] [ Veja nosso universo ]
+
+🧱 SEÇÃO 2: Nossos Serviços — “Feitiços sob medida”
+Título com animação leve de estrelinhas
+Subtítulo: Conheça os encantamentos que podemos conjurar para sua marca.
+Layout: Grid de 3 ou 4 cards por linha (dependendo da tela), cada card com:
+Ícone animado ou mascote pequeno
+Nome do serviço
+Descrição curta (1 linha)
+Botão “Ver detalhes” com hover mágico
+Serviços (cards):
+1. Criação de Sites Encantados
+
+Sites institucionais, landing pages e portais com identidade própria.
+1. Design & Identidade Visual
+Logotipo, paleta de cores, tipografia e alma visual da sua marca.
+1. Automação & Integrações
+Bots, WhatsApp, Instagram, e-mail e sistemas conectados.
+1. Marketing Estratégico & Campanhas
+Planejamento, anúncios e estratégia criativa com foco em vendas.
+1. Manutenção & Suporte Mágico
+Hospedagem, otimizações e ajustes mensais de performance.
+1. Criação para Social Media
+Postagens, stories, criativos interativos e identidade para redes.
+1. Cadastro de Produtos e Marketplaces
+Google Shopping, Meta Shopping, ERP, vitrines e integrações.
+
+🧱 SEÇÃO 3: Pacotes & Planos
+Título: Planos mágicos para cada nível de jornada
+Cards com nome mágico + mascote representando:
+Plano Semente (starter)
+1 página, entrega rápida, visual personalizado
+Plano Essência (intermediário)
+Site completo + identidade + automação básica
+Plano Arcano (completo)
+Site + branding + automações + social media + manutenção
+
+🧱 SEÇÃO 4: Mestres Webruxos
+Título: Conheça os conjuradores da magia
+Layout horizontal ou grid com os mascotes:
+Kaoro – Desenvolvimento & Tech
+Nyka – Design & UI/UX
+Vayra – Estratégia & Marketing
+Torkel – Estrutura & Suporte
+Eggonaldo – Aprendiz & guia interativo
+
+Cada card pode ter:
+Avatar ilustrado
+Nome e área de atuação
+Pequena fala inspiradora ou habilidade mágica
+
+🧱 SEÇÃO 5: Portfólio em Destaque
+Grid 3 colunas ou carrossel com projetos feitos
+Thumbnail
+Título + breve descrição
+Mascote que participou
+Botão “Ver projeto”
+
+🧱 SEÇÃO 6: Chamada final – “Vamos criar juntos?”
+Texto inspirador + CTA Eggonaldo apontando pra frente, como se chamasse o visitante para
+entrar no universo.
+Botões:
+Fale com um Webruxo
+Baixe nossa apresentação
+
+🧱 RODAPÉ
+
+Mapa do site
+Contato rápido
+Eggonaldo acenando ou lendo um grimório
+Links de redes
+Frase:
+Criado com magia, estratégia e carinho por Webruxo.
+
+Excelente escolha! Vamos detalhar agora a página completa de Serviços da Webruxo, com
+estrutura, storytelling, mascotes associados e sugestões visuais para montar o wireframe direto
+no Uizard, Figma ou Webflow.
+
+🧰 Página "Serviços" – Webruxo
+Aqui, o visitante descobre todos os feitiços que a guilda mágica oferece, guiado pelos próprios
+mestres encantadores.
+
+🧱 HEADER DA PÁGINA
+Título com magia flutuante:
+
+🧙‍♀️ Nossos Feitiços Digitais
+Subtítulo:
+Da criação de sites à automação encantada. Conheça nossos serviços personalizados para
+marcas que querem encantar e performar.
+
+🧩 SEÇÃO 1 — Cards de Serviços Individuais
+Apresentação de 6 a 8 serviços principais em um grid 2x3 ou carrossel horizontal, com
+destaque para mascotes e descrição mágica.
+
+🎨 Card Exemplo (estrutura por item):
+Mascote relacionado (ícone ou ilustração pequena no canto superior)
+Nome do serviço
+Descrição curta
+Destaque com feitiço especial (entregável de destaque ou diferencial)
+Botão: “Ver exemplo” ou “Solicitar feitiço”
+
+🔮 LISTA DOS SERVIÇOS (com mascotes):
+1. Sites Encantados
+Mascote: Kaoro
+
+Sites institucionais, portfólios, landing pages, blogs ou minisites otimizados e entregues com
+magia e velocidade.
+Inclui: layout exclusivo, responsividade, SEO básico, formulários e integração com redes sociais.
+2. Design & Identidade Visual
+Mascote: Nyka
+Criamos a alma visual da sua marca: logotipo, cores, fontes e aplicações encantadas que se
+conectam com o público.
+Inclui: logo, paleta, tipografia, kit de aplicações sociais.
+3. Social Media Criativa
+Mascote: Nyka
+Visual, tom de voz e estética pensada para destacar sua marca nas redes.
+Inclui: 8 a 12 posts/mês, criativos animados, stories, adaptação de branding, ícones.
+4. Automação & Atendimento Inteligente
+Mascote: Eggonaldo
+
+Criamos bots personalizados para Instagram, WhatsApp, e-mail e sites.
+Inclui: Fluxos inteligentes com perguntas/respostas, CRM inicial, automações baseadas em
+cliques e gatilhos.
+5. Marketing Digital & Estratégia
+Mascote: Vayra
+Desde campanhas pagas até estruturação de funis e jornadas mágicas do cliente.
+Inclui: plano estratégico, criação de campanhas, artes, acompanhamento de resultados.
+6. Suporte & Manutenção Mágica
+Mascote: Torkel
+Cuidamos do seu site como um guardião cuida do castelo.
+Inclui: correções, atualizações, ajustes visuais, performance, suporte técnico e relatórios
+mensais.
+7. Cadastro de Produtos e Integração com Marketplaces
+Mascote: Kaoro
+Organização de catálogo, integração com Google Shopping, Meta e ERPs.
+Inclui: cadastro de até 100 produtos, SEO on-page, integração com plataforma e marketplaces.
+8. Pacotes Completos por Jornada
+Mascote: todos reunidos
+Junte feitiços em combos mágicos: site + branding + social + manutenção = sucesso duradouro.
+
+🛠️ SEÇÃO 2 — Pacotes e Combos
+Cards verticais com nomes e ícones místicos:
+Nome do Pacote
+
+Conteúdo
+
+Plano Semente
+
+Site simples + logo básico
+
+Plano Essência
+
+Site + identidade visual + 5 posts
+
+Plano Arcano
+
+Tudo acima + automação + suporte mensal
+
+Pacote Marketplaces
+
+Cadastro + integração ERP + Google Meta
+
+🧙‍♂️ SEÇÃO 3 — Como funciona a magia?
+Etapas visuais com Eggonaldo guiando:
+1. Briefing
+2. Escolha do feitiço (serviço)
+3. Criação com magia
+4. Validação
+5. Entrega encantada
+6. Suporte contínuo (caso manutenção)
+
+📩 SEÇÃO FINAL — Chamada para ação
+Texto:
+Tem um projeto em mente ou quer começar com uma poção básica?
+Converse com um Webruxo e escolha o melhor feitiço para você.
+Botões:
+“Quero um orçamento encantado”
+“Ver portfólio de feitiços”
+
+🧠 UX Tip:
+Pode usar filtros mágicos no topo: “Preciso de site”, “Preciso de identidade”, “Quero
+automatizar”, etc.
+Ou usar quiz rápido com Eggonaldo: “Não sabe qual feitiço escolher? Deixe o Eggonaldo te
+ajudar!” com botões interativos.
+
+1. Transformar isso em layout wireframe visual (estilo sketch ou Figma)
+2. Criar os textos prontos para cada serviço já no tom final
+3. Gerar os prompts visuais para criar os cards com os mascotes
+
+

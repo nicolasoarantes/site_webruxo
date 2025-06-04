@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #1C1C1E; /* Preto Códico */
+    color: #FFFFFF; /* Branco Névoa */
+    font-family: sans-serif; /* Simple fallback font */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.game-header {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 10;
+}
+
+.game-header h1 a {
+    color: #FFD93D; /* Amarelo Pó-de-estrela */
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.game-header h2 {
+    color: #7D4EDB; /* Roxo Magia */
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+#game-container {
+    flex-grow: 1;
+    position: relative; /* Needed for absolute positioning of UI elements */
+    width: 100%;
+    height: 100%; /* Ensure canvas can take full height */
+}
+
+canvas {
+    display: block; /* Remove extra space below canvas */
+    width: 100%;
+    height: 100%;
+}
+
+/* Basic styling for mobile controls */
+#mobile-controls {
+    /* Styles are inline for now, can be moved here */
+    z-index: 20;
+}
+
+#mobile-controls button {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+#mobile-controls button:active {
+    opacity: 1;
+}
+
+/* Loading Screen */
+#loading-screen {
+    z-index: 100;
+}
+

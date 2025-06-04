@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cases - Webruxo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .case-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .case-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .case-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .case-content {
+            padding: 20px;
+        }
+        
+        .case-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .case-description {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            color: var(--dark);
+        }
+        
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .case-tag {
+            background-color: var(--accent-light);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .case-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .case-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.4);
+        }
+        
+        .case-category {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .case-category h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .case-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .case-category p {
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo">Webruxo</div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="cases.html">Cases</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="new_game/jogo_improved.html">Jogo Eggonaldo</a></li>
+                <li><a href="modelos-3d.html">Modelos 3D</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Header da Página -->
+        <section id="page-header" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem;">
+            <h1>Nossos Cases de Sucesso</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto 0;">Conheça alguns dos projetos que desenvolvemos e como ajudamos nossos clientes a alcançarem seus objetivos digitais.</p>
+        </section>
+
+        <div class="container">
+            <!-- Projetos Webruxo -->
+            <section class="case-category">
+                <h2>Projetos Webruxo</h2>
+                <p>Projetos desenvolvidos integralmente pela equipe Webruxo, desde o conceito até a implementação final.</p>
+                
+                <div class="case-grid">
+                    <!-- Case 1 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Solvit+Consultoria');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Solvit Consultoria</h3>
+                            <p class="case-description">Site institucional completo com design personalizado, otimização SEO e integração com ferramentas de marketing.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">Design Responsivo</span>
+                                <span class="case-tag">SEO</span>
+                            </div>
+                            <a href="https://solvitconsultoria.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 2 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=VoeClick');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">VoeClick</h3>
+                            <p class="case-description">Landing page de alta conversão para empresa de turismo, com design moderno e otimizado para dispositivos móveis.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Landing Page</span>
+                                <span class="case-tag">Conversão</span>
+                                <span class="case-tag">UX/UI</span>
+                            </div>
+                            <a href="#" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 3 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Julia+Muniz+Arquitetura');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Julia Muniz Arquitetura</h3>
+                            <p class="case-description">Landing page para infoproduto no ramo de arquitetura, incluindo processos e modelos para o ClickUp.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Infoproduto</span>
+                                <span class="case-tag">ClickUp</span>
+                                <span class="case-tag">Processos</span>
+                            </div>
+                            <a href="#" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projetos em Parceria com Solvit.Cx -->
+            <section class="case-category">
+                <h2>Desenvolvidos em Parceria com Solvit.Cx</h2>
+                <p>Projetos onde a Webruxo contribuiu com integrações, desenvolvimento de código, peças gráficas, atendimento ao cliente, planejamento estratégico e muito mais.</p>
+                
+                <div class="case-grid">
+                    <!-- Case 1 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Nina+Menina');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Nina Menina</h3>
+                            <p class="case-description">E-commerce em desenvolvimento na plataforma Shopify, com design personalizado e integrações avançadas.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Shopify</span>
+                                <span class="case-tag">E-commerce</span>
+                                <span class="case-tag">Design</span>
+                            </div>
+                            <a href="https://ninameninabr.myshopify.com/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 2 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Mahina+Vix');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Mahina Vix</h3>
+                            <p class="case-description">E-commerce com suporte contínuo da Webruxo, incluindo design, desenvolvimento e adaptações constantes.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">WooCommerce</span>
+                                <span class="case-tag">Suporte</span>
+                            </div>
+                            <a href="https://mahinavix.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 3 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Festival+Delírio+Tropical');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Festival Delírio Tropical</h3>
+                            <p class="case-description">Site para um dos maiores festivais de música do Brasil, com desenvolvimento de código e design personalizado.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Eventos</span>
+                                <span class="case-tag">Responsivo</span>
+                                <span class="case-tag">Performance</span>
+                            </div>
+                            <a href="https://festivaldeliriotropical.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 4 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=A+Selva+Aluguel');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">A Selva Aluguel</h3>
+                            <p class="case-description">Sistema de aluguel de plantas desenvolvido com tecnologias modernas e interface intuitiva.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Sistema</span>
+                                <span class="case-tag">GitHub</span>
+                                <span class="case-tag">Desenvolvimento</span>
+                            </div>
+                            <a href="https://github.com/nicolasoarantes/a_selva_alguel" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 5 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Solvit+3D+Landing+Page');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Solvit 3D Landing Page</h3>
+                            <p class="case-description">Landing page com interação responsiva e rápida em 3D, proporcionando uma experiência imersiva.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">3D</span>
+                                <span class="case-tag">Webflow</span>
+                                <span class="case-tag">Interativo</span>
+                            </div>
+                            <a href="https://solvit-3d.webflow.io/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 6 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Hera+Vinhos');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Hera Vinhos</h3>
+                            <p class="case-description">E-commerce em WordPress para loja de vinhos, com design elegante e funcionalidades personalizadas.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">E-commerce</span>
+                                <span class="case-tag">Design</span>
+                            </div>
+                            <a href="https://heravinhos.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Suporte e Desenvolvimento -->
+            <section class="case-category">
+                <h2>Suporte e Desenvolvimento</h2>
+                <p>Projetos onde nossa equipe trabalhou no suporte ou desenvolvimento de sites institucionais e e-commerces.</p>
+                
+                <div class="case-grid">
+                    <!-- Case 1 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Verdureira');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Verdureira</h3>
+                            <p class="case-description">Site institucional em WordPress para empresa de hortifruti, com design responsivo e otimização SEO.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">Institucional</span>
+                                <span class="case-tag">SEO</span>
+                            </div>
+                            <a href="https://verdureira.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 2 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Cooltiva');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Cooltiva</h3>
+                            <p class="case-description">Site institucional em WordPress com design moderno e funcionalidades personalizadas.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">Institucional</span>
+                                <span class="case-tag">Design</span>
+                            </div>
+                            <a href="https://cooltiva.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 3 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Nina+Saúde');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Nina Saúde</h3>
+                            <p class="case-description">Site institucional para clínica de saúde, com design clean e foco na experiência do usuário.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">Saúde</span>
+                                <span class="case-tag">UX/UI</span>
+                            </div>
+                            <a href="https://ninasaude.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 4 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=BDNet');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">BDNet</h3>
+                            <p class="case-description">Primeiro site institucional desenvolvido pela equipe, com design responsivo e funcionalidades básicas.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">WordPress</span>
+                                <span class="case-tag">Institucional</span>
+                                <span class="case-tag">Responsivo</span>
+                            </div>
+                            <a href="https://www.bdnet.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 5 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Catharino+Alvarenga');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Catharino Alvarenga</h3>
+                            <p class="case-description">Site institucional desenvolvido em Webflow, com design elegante e navegação intuitiva.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Webflow</span>
+                                <span class="case-tag">Institucional</span>
+                                <span class="case-tag">Design</span>
+                            </div>
+                            <a href="https://catharino-alvarenga.webflow.io/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 6 -->
+                    <div class="case-card">
+                        <div class="case-image" style="background-image: url('https://via.placeholder.com/400x200/6A1B9A/FFFFFF?text=Bellagio+Bolsas');"></div>
+                        <div class="case-content">
+                            <h3 class="case-title">Bellagio Bolsas</h3>
+                            <p class="case-description">E-commerce em Shopify para loja de bolsas, com design personalizado e integrações de pagamento.</p>
+                            <div class="case-tags">
+                                <span class="case-tag">Shopify</span>
+                                <span class="case-tag">E-commerce</span>
+                                <span class="case-tag">Design</span>
+                            </div>
+                            <a href="https://bellagiobolsas.com.br/" target="_blank" class="case-link">Ver projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA -->
+            <section id="cta" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem; margin: 60px 0 30px; border-radius: 10px;">
+                <h2>Pronto para transformar sua presença digital?</h2>
+                <p>Entre em contato conosco hoje mesmo e descubra como podemos ajudar seu negócio a crescer online.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+                    <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20meu%20projeto" target="_blank" style="display: inline-block; padding: 12px 25px; background-color: white; color: var(--primary); border-radius: 5px; text-decoration: none; font-weight: 600;">Solicitar Orçamento</a>
+                    <a href="modelos-3d.html" style="display: inline-block; padding: 12px 25px; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 5px; text-decoration: none; font-weight: 600;">Ver Modelos 3D</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Mapa do Site</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="cases.html">Cases</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="new_game/jogo_improved.html">Jogo Eggonaldo</a></li>
+                    <li><a href="modelos-3d.html">Modelos 3D</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato Rápido</h4>
+                <p>Email: contato@webruxo.com</p>
+                <p>WhatsApp: <a href="https://wa.me/5527996218871" target="_blank">+55 27 99621-8871</a></p>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" target="_blank" style="color: var(--light);"><i class="fab fa-facebook fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="footer-mascot">
+                <img src="images/eggonaldo_mascote.png" alt="Eggonaldo" style="max-width: 100px;">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Criado com magia, estratégia e carinho por Webruxo.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

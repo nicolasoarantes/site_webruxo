@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webruxo - Magia Digital para sua Marca</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -157,11 +160,19 @@
         <section id="portfolio">
             <h2>Portfólio em Destaque</h2>
             
+            <div class="portfolio-filters">
+                <button class="portfolio-filter-btn active" data-filter="all">Todos</button>
+                <button class="portfolio-filter-btn" data-filter="webruxo">Projetos Webruxo</button>
+                <button class="portfolio-filter-btn" data-filter="parceria">Parcerias</button>
+                <button class="portfolio-filter-btn" data-filter="suporte">Suporte</button>
+            </div>
+            
             <div class="portfolio-category">
                 <h3>Projetos Webruxo</h3>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="webruxo">
                         <div class="portfolio-image">
+                            <span class="portfolio-badge">Destaque</span>
                             <img src="images/portfolio/solvit_3d.jpg" alt="Solvit 3D Landing Page" class="portfolio-thumb">
                         </div>
                         <h3>Solvit 3D Landing Page</h3>
@@ -170,7 +181,7 @@
                         <a href="https://solvit-3d.webflow.io/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="webruxo">
                         <div class="portfolio-image">
                             <img src="images/portfolio/voeclick.jpg" alt="VoeClick Landing Page" class="portfolio-thumb">
                         </div>
@@ -180,7 +191,7 @@
                         <a href="#" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="webruxo">
                         <div class="portfolio-image">
                             <img src="images/portfolio/julia_muniz.jpg" alt="Julia Muniz Arquitetura" class="portfolio-thumb">
                         </div>
@@ -195,7 +206,7 @@
             <div class="portfolio-category">
                 <h3>Desenvolvidos em Parceria com Solvit.Cx</h3>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
                             <img src="images/portfolio/nina_menina.jpg" alt="Nina Menina" class="portfolio-thumb">
                         </div>
@@ -205,8 +216,9 @@
                         <a href="https://ninameninabr.myshopify.com/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
+                            <span class="portfolio-badge">Destaque</span>
                             <img src="images/portfolio/mahina.jpg" alt="Mahina" class="portfolio-thumb">
                         </div>
                         <h3>Mahina</h3>
@@ -215,7 +227,7 @@
                         <a href="https://mahinavix.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
                             <img src="images/portfolio/delirio_tropical.jpg" alt="Festival Delírio Tropical" class="portfolio-thumb">
                         </div>
@@ -225,7 +237,7 @@
                         <a href="https://festivaldeliriotropical.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
                             <img src="images/portfolio/solvit.jpg" alt="Solvit Consultoria" class="portfolio-thumb">
                         </div>
@@ -235,7 +247,7 @@
                         <a href="https://solvitconsultoria.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
                             <img src="images/portfolio/hera_vinhos.jpg" alt="Hera Vinhos" class="portfolio-thumb">
                         </div>
@@ -245,7 +257,7 @@
                         <a href="https://heravinhos.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="parceria">
                         <div class="portfolio-image">
                             <img src="images/portfolio/delcaro.jpg" alt="Delcaro Advocacia" class="portfolio-thumb">
                         </div>
@@ -260,7 +272,7 @@
             <div class="portfolio-category">
                 <h3>Suporte e Desenvolvimento</h3>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="suporte">
                         <div class="portfolio-image">
                             <img src="images/portfolio/verdureira.jpg" alt="Verdureira" class="portfolio-thumb">
                         </div>
@@ -270,12 +282,68 @@
                         <a href="https://verdureira.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
                     
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-category="suporte">
                         <div class="portfolio-image">
                             <img src="images/portfolio/cooltiva.jpg" alt="Cooltiva" class="portfolio-thumb">
                         </div>
                         <h3>Cooltiva</h3>
                         <p>Site institucional em WordPress com foco em apresentação de produtos e serviços de forma clara e atrativa.</p>
+                        <p>Contribuições: Suporte, Desenvolvimento</p>
+                        <a href="https://cooltiva.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="suporte">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/nina_saude.jpg" alt="Nina Saúde" class="portfolio-thumb">
+                        </div>
+                        <h3>Nina Saúde</h3>
+                        <p>Site institucional em WordPress para área de saúde, com design limpo e funcional.</p>
+                        <p>Contribuições: Suporte, Otimização</p>
+                        <a href="https://ninasaude.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="suporte">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/bdnet.jpg" alt="BDNet" class="portfolio-thumb">
+                        </div>
+                        <h3>BDNet</h3>
+                        <p>Primeiro projeto institucional desenvolvido pela equipe, com foco em apresentação de serviços de tecnologia.</p>
+                        <p>Contribuições: Desenvolvimento, Design</p>
+                        <a href="https://www.bdnet.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="suporte">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/catharino.jpg" alt="Catharino Alvarenga" class="portfolio-thumb">
+                        </div>
+                        <h3>Catharino Alvarenga</h3>
+                        <p>Site institucional em Webflow com design elegante e profissional para escritório de advocacia.</p>
+                        <p>Contribuições: Desenvolvimento, Design</p>
+                        <a href="https://catharino-alvarenga.webflow.io/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="suporte">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/bellagio.jpg" alt="Bellagio Bolsas" class="portfolio-thumb">
+                        </div>
+                        <h3>Bellagio Bolsas</h3>
+                        <p>E-commerce em Shopify com integrações de pagamento, frete e gestão de estoque.</p>
+                        <p>Contribuições: Suporte, Integrações</p>
+                        <a href="https://bellagiobolsas.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="suporte">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/total_health.jpg" alt="Total Health" class="portfolio-thumb">
+                        </div>
+                        <h3>Total Health</h3>
+                        <p>Landing page institucional em Webflow para área de saúde, com design moderno e atrativo.</p>
+                        <p>Contribuições: Desenvolvimento, Design</p>
+                        <a href="https://total-health-37950a.webflow.io/" target="_blank" class="btn-portfolio">Ver projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
                         <p>Contribuições: Suporte, Desenvolvimento</p>
                         <a href="https://cooltiva.com.br/" target="_blank" class="btn-portfolio">Ver projeto</a>
                     </div>
@@ -375,5 +443,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>

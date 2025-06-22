@@ -4,79 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelos 3D - Webruxo</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/models.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        .model-container {
-            width: 100%;
-            height: 400px;
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #0B0B2D, #2D0B38);
-        }
-        
-        .model-section {
-            padding: 40px 0;
-        }
-        
-        .model-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .model-info {
-            padding: 20px;
-        }
-        
-        .model-info h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .model-info p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .model-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .model-buttons a {
-            padding: 10px 20px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .model-buttons a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(106, 27, 154, 0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .model-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .model-container {
-                height: 300px;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="models-page">
     <header>
         <nav>
             <div class="logo-container">
@@ -93,16 +29,16 @@
                 <li><a href="cases.html">Cases</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="new_game/jogo_improved.html">Jogo Eggonaldo</a></li>
-                <li><a href="modelos-3d.html">Modelos 3D</a></li>
+                <li><a href="modelos-3d.html" class="active">Modelos 3D</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Header da Página -->
-        <section id="page-header" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem;">
+        <section class="models-header">
             <h1>Nossos Modelos 3D Interativos</h1>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto 0;">Explore nossos modelos 3D interativos e descubra como podemos trazer magia digital para sua marca com experiências imersivas.</p>
+            <p>Explore nossos modelos 3D interativos e descubra como podemos trazer magia digital para sua marca com experiências imersivas.</p>
         </section>
 
         <!-- Seção Eggonaldo -->
@@ -110,14 +46,16 @@
             <div class="container">
                 <h2>Eggonaldo - Nosso Mascote Mágico</h2>
                 <div class="model-grid">
-                    <div class="model-container" id="eggonaldo-viewer"></div>
+                    <div class="model-container" id="eggonaldo-viewer">
+                        <span class="model-badge">Interativo</span>
+                    </div>
                     <div class="model-info">
                         <h3>Eggonaldo, o Bruxo dos Ovos</h3>
                         <p>Nosso mascote oficial, Eggonaldo, é um bruxo especialista em magia digital. Com seu chapéu roxo e personalidade carismática, ele guia nossos clientes pela jornada de transformação digital.</p>
                         <p>Este modelo 3D foi criado com técnicas avançadas de modelagem e texturização, demonstrando nossa capacidade de criar personagens únicos e memoráveis para sua marca.</p>
                         <div class="model-buttons">
-                            <a href="new_game/jogo_improved.html">Jogar com Eggonaldo</a>
-                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20modelagem%203D" target="_blank">Solicitar Orçamento</a>
+                            <a href="new_game/jogo_improved.html"><i class="fas fa-gamepad"></i> Jogar com Eggonaldo</a>
+                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20modelagem%203D" target="_blank"><i class="fas fa-comment-dollar"></i> Solicitar Orçamento</a>
                         </div>
                     </div>
                 </div>
@@ -134,11 +72,96 @@
                         <p>Este é um exemplo de nossa capacidade de criar experiências 3D interativas usando tecnologias avançadas como Spline. Interaja com o modelo usando seu mouse ou toque para uma experiência imersiva.</p>
                         <p>Podemos criar modelos semelhantes para sua marca, produtos ou serviços, proporcionando uma experiência única e memorável para seus clientes.</p>
                         <div class="model-buttons">
-                            <a href="https://prod.spline.design/rpouiftbxrJqNDoc/scene.splinecode" target="_blank">Ver em Tela Cheia</a>
-                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20experiência%203D%20interativa" target="_blank">Solicitar Orçamento</a>
+                            <a href="https://my.spline.design/monsterlittlebluecopy-WT9Twz9ZbSP31ECaQ7d7KXxz/" target="_blank"><i class="fas fa-expand-alt"></i> Ver em Tela Cheia</a>
+                            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20experiência%203D%20interativa" target="_blank"><i class="fas fa-comment-dollar"></i> Solicitar Orçamento</a>
                         </div>
                     </div>
-                    <div class="model-container" id="monster-viewer"></div>
+                    <div class="model-container" id="monster-viewer">
+                        <span class="model-badge">Interativo</span>
+                        <div class="iframe-container">
+                            <iframe src='https://my.spline.design/monsterlittlebluecopy-WT9Twz9ZbSP31ECaQ7d7KXxz/' frameborder='0'></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Modelos de Arquitetura -->
+        <section class="model-section">
+            <div class="container">
+                <h2>Arquitetura Digital</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Explore nossos modelos 3D de arquitetura e visualize espaços antes mesmo de sua construção. Perfeito para apresentações de projetos, marketing imobiliário e experiências imersivas.</p>
+                
+                <div class="architecture-models">
+                    <div class="architecture-model">
+                        <div class="architecture-model-container">
+                            <span class="model-badge">Interativo</span>
+                            <iframe src='https://my.spline.design/miniquarto3drosa-SjcdXLRx5nUIBBxqEW3oC0u1/' frameborder='0' width='100%' height='100%'></iframe>
+                        </div>
+                        <div class="architecture-info">
+                            <h3>MiniQuarto Rosa</h3>
+                            <p>Um quarto conceitual com estilo minimalista e tons de rosa. Perfeito para visualização de projetos de design de interiores.</p>
+                            <a href="https://my.spline.design/miniquarto3drosa-SjcdXLRx5nUIBBxqEW3oC0u1/" target="_blank" class="btn-service">Ver em Tela Cheia</a>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-model">
+                        <div class="architecture-model-container">
+                            <span class="model-badge">Interativo</span>
+                            <iframe src='https://my.spline.design/pequenasalainterativo3d-mMoDXkulM3V8qL0avl1M0GFn/' frameborder='0' width='100%' height='100%'></iframe>
+                        </div>
+                        <div class="architecture-info">
+                            <h3>Quarto Real</h3>
+                            <p>Modelo realista de um quarto moderno com detalhes precisos. Ideal para apresentações imobiliárias e visualização de projetos.</p>
+                            <a href="https://my.spline.design/pequenasalainterativo3d-mMoDXkulM3V8qL0avl1M0GFn/" target="_blank" class="btn-service">Ver em Tela Cheia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Modelos Adicionais -->
+        <section class="model-section" style="background-color: #f9f9f9;">
+            <div class="container">
+                <h2>Outros Modelos Interativos</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Confira outros exemplos de modelos 3D interativos que podemos criar para sua marca ou projeto.</p>
+                
+                <div class="architecture-models">
+                    <div class="architecture-model">
+                        <div class="architecture-model-container">
+                            <span class="model-badge">Interativo</span>
+                            <iframe src='https://my.spline.design/worldplanet-YQsd4GflXGI7lFxAx6J3gDGE/' frameborder='0' width='100%' height='100%'></iframe>
+                        </div>
+                        <div class="architecture-info">
+                            <h3>WeGlobo</h3>
+                            <p>Um globo interativo que pode ser personalizado com dados geográficos ou informações da sua empresa.</p>
+                            <a href="https://my.spline.design/worldplanet-YQsd4GflXGI7lFxAx6J3gDGE/" target="_blank" class="btn-service">Ver em Tela Cheia</a>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-model">
+                        <div class="architecture-model-container">
+                            <span class="model-badge">Interativo</span>
+                            <iframe src='https://my.spline.design/solvitlogolava-CBum555CnDZrpbSkbCimVrA1/' frameborder='0' width='100%' height='100%'></iframe>
+                        </div>
+                        <div class="architecture-info">
+                            <h3>Logo 3D Interativo</h3>
+                            <p>Transforme seu logo em uma experiência 3D interativa, adicionando movimento e vida à sua identidade visual.</p>
+                            <a href="https://my.spline.design/solvitlogolava-CBum555CnDZrpbSkbCimVrA1/" target="_blank" class="btn-service">Ver em Tela Cheia</a>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-model">
+                        <div class="architecture-model-container">
+                            <span class="model-badge">Interativo</span>
+                            <iframe src='https://my.spline.design/boatcopy-oQu2boI0N3WQrZrvi4fhoHne/' frameborder='0' width='100%' height='100%'></iframe>
+                        </div>
+                        <div class="architecture-info">
+                            <h3>Modelo de Produto</h3>
+                            <p>Visualização interativa de produtos em 3D, permitindo que seus clientes explorem todos os detalhes antes da compra.</p>
+                            <a href="https://my.spline.design/boatcopy-oQu2boI0N3WQrZrvi4fhoHne/" target="_blank" class="btn-service">Ver em Tela Cheia</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -149,24 +172,28 @@
                 <h2>Nossos Serviços de Modelagem 3D</h2>
                 <div class="services-grid" style="margin-top: 30px;">
                     <div class="service-card">
+                        <i class="fas fa-user-astronaut fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
                         <h3>Modelagem de Personagens</h3>
                         <p>Criamos personagens 3D únicos para sua marca, jogos, animações ou experiências interativas.</p>
                         <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
                     </div>
                     
                     <div class="service-card">
+                        <i class="fas fa-vr-cardboard fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
                         <h3>Experiências Interativas</h3>
                         <p>Desenvolvemos experiências 3D interativas para web, permitindo que seus clientes interajam com seus produtos de forma imersiva.</p>
                         <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
                     </div>
                     
                     <div class="service-card">
+                        <i class="fas fa-cube fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
                         <h3>Visualização de Produtos</h3>
                         <p>Transformamos seus produtos em modelos 3D interativos para e-commerce, catálogos digitais e apresentações.</p>
                         <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
                     </div>
                     
                     <div class="service-card">
+                        <i class="fas fa-vector-square fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
                         <h3>Logos e Identidade Visual 3D</h3>
                         <p>Elevamos sua identidade visual com versões 3D de logos e elementos de marca para uso em diversos contextos.</p>
                         <a href="servicos.html#individual-services" class="btn-service">Saiba Mais</a>
@@ -176,10 +203,11 @@
         </section>
 
         <!-- Seção CTA -->
-        <section id="cta" style="background: var(--gradient); color: var(--light); text-align: center; padding: 4rem 2rem;">
+        <section id="cta">
             <h2>Pronto para adicionar magia 3D ao seu projeto?</h2>
             <p>Entre em contato conosco hoje mesmo e descubra como podemos transformar suas ideias em experiências digitais encantadas.</p>
-            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20projeto%203D" target="_blank" style="display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: white; color: var(--primary); border-radius: 5px; text-decoration: none; font-weight: 600;">Solicitar Orçamento</a>
+            <a href="https://wa.me/5527996218871?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20projeto%203D" target="_blank" class="btn-cta">Solicitar Orçamento</a>
+            <a href="contato.html" class="btn-cta-secondary">Fale Conosco</a>
         </section>
     </main>
 
@@ -218,20 +246,18 @@
         </div>
     </footer>
 
+    <script src="js/models.js"></script>
     <script type="module">
-        import { createEggonaldoViewer, createSplineViewer } from './js/3d-viewer.js';
+        import { createEggonaldoViewer } from './js/3d-viewer-enhanced.js';
         
         // Inicializar visualizador do Eggonaldo
         const eggonaldoViewer = createEggonaldoViewer('eggonaldo-viewer');
         
-        // Inicializar visualizador do Monster via Spline
-        const monsterViewer = createSplineViewer('monster-viewer', 'https://prod.spline.design/rpouiftbxrJqNDoc/scene.splinecode');
-        
         // Adicionar evento para limpar visualizadores ao sair da página
         window.addEventListener('beforeunload', () => {
             if (eggonaldoViewer) eggonaldoViewer.dispose();
-            if (monsterViewer) monsterViewer.dispose();
         });
     </script>
 </body>
 </html>
+
